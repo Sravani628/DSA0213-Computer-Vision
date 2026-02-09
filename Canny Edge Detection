@@ -1,0 +1,7 @@
+import cv2
+
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\image7.jpg.png",0)
+edge = cv2.Canny(img,100,200)
+
+cv2.imshow("Canny",edge)
+cv2.waitKey(0)
