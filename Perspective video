@@ -1,0 +1,17 @@
+import cv2, numpy as np
+
+cap = cv2.VideoCapture(0)
+
+pts1 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+pts2 = np.float32([[50,50],[250,0],[0,250],[300,300]])
+M = cv2.getPerspectiveTransform(pts1,pts2)
+
+while True:
+    ret, frame = cap.read()
+    if not ret: break
+    out = cv2.warpPerspective(frame,M,(400,400))
+    cv2.imshow("Video",out)
+    if cv2.waitKey(1)==ord('q'): break
+
+cap.release()
+cv2.destroyAllWindows()
