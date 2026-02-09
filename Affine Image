@@ -1,0 +1,12 @@
+import cv2, numpy as np
+
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\image4.jpg.png")
+
+pts1 = np.float32([[50,50],[200,50],[50,200]])
+pts2 = np.float32([[10,100],[200,50],[100,250]])
+
+M = cv2.getAffineTransform(pts1,pts2)
+affine = cv2.warpAffine(img,M,(500,500))
+
+cv2.imshow("Affine",affine)
+cv2.waitKey(0)
