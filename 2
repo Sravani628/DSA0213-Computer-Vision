@@ -1,0 +1,20 @@
+import cv2
+
+# Step 1: Read image using RAW PATH
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\house.jpg.png")
+
+if img is None:
+    print("Image not found")
+else:
+    # Step 2: Show original image
+    cv2.imshow("Original Image", img)
+
+    # Step 3: Apply Gaussian Blur
+    blur = cv2.GaussianBlur(img, (15,15), 0)
+
+    # Step 4: Show blurred image
+    cv2.imshow("Blur Image", blur)
+
+    # Step 5: Wait for key press
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
