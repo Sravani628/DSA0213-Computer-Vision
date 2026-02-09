@@ -1,0 +1,22 @@
+import cv2
+
+# Read image using RAW PATH
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\scene.jpg.png")
+
+if img is None:
+    print("Image not found")
+else:
+    # Show original image
+    cv2.imshow("Original Image", img)
+
+    # Convert to grayscale (Canny needs grayscale)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Apply Canny Edge Detection
+    edges = cv2.Canny(gray, 100, 200)
+
+    # Show edges
+    cv2.imshow("Canny Edges", edges)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
