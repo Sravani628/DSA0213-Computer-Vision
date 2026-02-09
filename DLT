@@ -1,0 +1,12 @@
+import cv2, numpy as np
+
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\image7.jpg.png")
+
+pts1 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+pts2 = np.float32([[50,50],[250,0],[0,250],[300,300]])
+
+H,_ = cv2.findHomography(pts1,pts2)   # DLT internally
+out = cv2.warpPerspective(img,H,(400,400))
+
+cv2.imshow("DLT",out)
+cv2.waitKey(0)
