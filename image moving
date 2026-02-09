@@ -1,0 +1,9 @@
+import cv2, numpy as np
+
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\image3.jpg.png")
+M = np.float32([[1,0,100],[0,1,50]])   # move right & down
+
+shift = cv2.warpAffine(img,M,(500,500))
+
+cv2.imshow("Moved",shift)
+cv2.waitKey(0)
