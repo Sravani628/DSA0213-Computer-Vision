@@ -1,0 +1,10 @@
+import cv2
+
+img = cv2.imread(r"C:\Users\srava\OneDrive\Desktop\Pictures\image2.jpg.png")
+
+cw  = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+ccw = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+
+cv2.imshow("CW",cw)
+cv2.imshow("CCW",ccw)
+cv2.waitKey(0)
